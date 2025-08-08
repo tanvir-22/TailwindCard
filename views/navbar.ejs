@@ -1,0 +1,23 @@
+<nav class="flex justify-between items-center p-5 bg-gray-800 text-white text-900">
+  <div class="flex items-center space-x-2">
+    <!-- <img src="/path-to-icon.svg" alt="BoiBazaar" class="w-8 h-8" /> -->
+    <span class="text-xl font-bold">BoiBazaar</span>
+  </div>
+
+  <div class="flex items-center space-x-4 text-900">
+    <a href="/" class="hover:underline">Home</a>
+    <a href="/getBooks" class="hover:underline">Books</a>
+    <a href="" class="hover:underline">About Us</a>
+    <a href="" class="hover:underline">Cart</a>
+
+    <% if (user) { %>
+      <a href="<%= user.role === 'admin' ? '/admin/dashboard' : '/customer/dashboard' %>" 
+         class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 text-white">
+         Profile
+      </a>
+    <% } else { %>
+      <a href="/login" class="px-4 hover:underline">Login</a>
+      <a href="/register" class="px-4 hover:underline">Sign Up</a>
+    <% } %>
+  </div>
+</nav>
